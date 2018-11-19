@@ -1,0 +1,2378 @@
+@import "compass/css3";
+
+@include font-face("Bold2", url('fonts/Bold.otf'));
+
+@include font-face("Bold", url('fonts/FagoCo-Bold.otf'));
+
+@include font-face("Italic", url('fonts/FagoCo-Italic.otf'));
+
+@include font-face("Black", url('fonts/FagoCo-Black.otf'));
+
+@include font-face("BlackCaps", url('fonts/FagoCo-BlackCaps.otf'));
+
+@include font-face("Regular", url('fonts/FagoCo.otf'));
+
+@include font-face("Medium", url('fonts/FagoCo-Medium.otf'));
+
+
+// |||||||||||||||||||||||||||||||| VARIABLES ||||||||||||||||||||||||||||||||||||||||||||
+
+
+$azul: #0000ff;
+$naranja: #ff6400;
+$rojo: #ff6262;
+
+
+@mixin parrafoazul ($margin, $fonttamanio) {
+
+	margin: $margin;
+	font-family: "Regular";
+	font-size: $fonttamanio;
+	color: $azul;
+	text-align: justify;
+	
+}
+
+@mixin botonesform ($color){
+	background-color: $color;
+	transition: all 0.5s ease-out;
+	border: none;
+	border-radius: 0px;
+	font-family: 'Regular';
+	color: white;
+	width: 50%;
+
+	&:hover, &:focus, &:active{
+		color: $color;
+		background-color: transparent;
+		border: 1px solid $color;
+	}
+}
+
+.js-form-managed-file{
+	.preview{
+		width: 100%;
+	}
+}
+
+// |||||||||||||||||||||||||||||||| MIXINS ||||||||||||||||||||||||||||||||||||||||||||
+
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="date"], input[type="url"], textarea[data-drupal-selector="edit-field-resena-de-la-agrupac-0-value"], .alert-dismissible{
+    color: $azul;
+    font-family: 'Regular';
+}
+
+body{
+	margin: 0;
+}
+
+.azulmenu {
+	background-color: transparent;
+	border-radius: 0;
+}
+
+.ulmenu{
+	float: right;
+	li{
+		font-family: 'Regular';
+		text-transform: Uppercase;
+
+		a{
+			color: $azul;
+			margin-top: 10px;
+
+			&:hover{
+				background-color: $azul;
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.bloqueprimero{
+	//margin: 0 17px;
+
+	.infobasik{
+		border: 4px solid $azul;
+
+		h3{
+			text-align: center;
+			font-family: "BlackCaps";
+			color: $azul;
+			font-size: 105px;
+			text-transform: uppercase;
+			line-height: 118px;
+
+			span{
+				font-family: "Black";
+				text-transform: uppercase;
+				font-size: 150px;
+			}
+		}
+
+		p{
+			margin: 0 52px 27px 52px;
+			font-family: "Regular";
+			font-size: 16px;
+			color: $azul;
+			text-align: justify;
+		}
+	}
+}
+
+
+.titulosbloques{
+	.block-title{
+		font-family: "BlackCaps";
+		color: $azul;
+		font-size: 87px;
+		text-transform: uppercase;
+	}
+}
+
+
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+
+////////////////////SHOWCASE HOME
+
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+
+.containershow{
+	padding: 0;
+}
+
+.titleshowcase {
+	font-family: 'Black';
+	color: $naranja; 
+	text-transform: uppercase;
+	font-size: 580%;
+	text-align: center;
+
+}
+
+.pconvo {
+	@include parrafoazul (0 0 4vh 0, 2.5vw);
+
+	span{
+		font-family: 'Black';
+	}
+}
+
+.basesconvo {
+	@include parrafoazul (0, 2.5vw);
+	//text-decoration: underline $naranja;
+	text-decoration: none;
+	transition: all .25s ease-in;
+
+	&:hover, &:focus{
+		text-decoration: none;
+		color: darken($azul, 20%);
+	} 
+			
+	&:hover::before{
+		//visibility: hidden;
+		transform: scaleX(0);
+		width: 0;
+	}
+
+	&::before{
+		content: "";
+		position: absolute;
+		width: 39vw;
+		height: 3px;
+		bottom: 0;
+		left: 0;
+		background: $naranja;
+		//visibility: visible;
+		border-radius: 5px;
+		transform: scaleX(1);
+		transition: .25s linear;
+	}
+}
+
+#inscripcionbtn{
+	border: solid 7px $azul;
+	position: relative;
+	margin: 46px 0 0 0;
+    padding: 0 29px 29px 29px;
+}
+
+.inscribehead{
+	font-family: 'Black';
+	color: $naranja;
+	font-size: 10vw;
+	text-transform: uppercase;
+	letter-spacing: 0.5vw;
+
+}
+
+.inscribehead3{
+	letter-spacing: 0.2vw;
+    text-transform: uppercase;
+    color: $azul;
+    font-family: 'Bold2';
+    font-size: 3.7vw;
+    position: absolute;
+    padding: 0 0 0 58vw;
+    right: 0;
+    text-align: right;
+    top: 41%;
+    margin-right: 2vw;
+
+    span{
+    	letter-spacing: 0.52vw;
+    }
+}
+
+.consultas{
+	color: $azul;
+	font-family: 'Regular';
+	font-size: 1.5vw;
+	position: absolute;
+	padding: 0 0 0 46vw;
+    right: 0;
+    text-align: right;
+    top: 86%;
+    margin-right: 2vw;
+}
+
+.queesshow{
+	font-size: 10.4vw;
+	color: $azul;
+	font-family: 'Bold2';
+	text-transform: uppercase;
+
+	img{
+		margin-top: 2vh;
+		margin-bottom: 5vh;
+		width: 100%;
+	}
+}
+
+.pconvoques{
+	@include parrafoazul (53% 0 0 0, 1.9vw); 
+}	
+
+.pconvoques2{
+	@include parrafoazul (0, 2vw); 
+}
+
+
+////////////////////
+////////////////////
+////////////////////RESPONSIVE
+////////////////////
+////////////////////
+
+@media only screen and (max-width: 1999px) {
+	.titleshowcase{
+		font-size: 102.5px;
+	}
+
+	.consultas{
+		padding: 0 0 0 30vw;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.titleshowcase{
+		font-size: 85.9px;
+	}
+}
+
+
+
+@media only screen and (max-width: 991px) {
+	.titleshowcase{
+		font-size: 65.8px;
+	}
+
+	#edit-field-correo-electronico-de-cont-wrapper{
+		margin-left: 1.8%;
+	}
+
+	#edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper {
+	    width: 23.2%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.titleshowcase{
+		font-size: 463%;
+	}
+
+	.consultas{
+		font-size: 1.8vw;
+	}
+}
+
+@media only screen and (max-width: 426px) {
+	.titleshowcase{
+		font-size: 651%;
+		margin-top: 5px;
+	}
+
+	.pconvo, .basesconvo{
+		font-size: 4.5vw;
+
+		&::before{
+			width: 75.5%;
+		}
+	}
+
+	.inscribehead{
+		margin-top: 8vw;
+	}
+
+	.inscribehead3{
+		top: 13vh;
+	}
+
+	.consultas{
+		padding: 0 0 0 25px;
+		top: 27vh;
+		font-size: 3vw;
+	}
+
+	#inscripcionbtn{
+		margin: 46px 0;
+	}
+
+	.queesshow{
+		text-align: center;
+		font-size: 25.4vw;
+		margin-top: 0;
+	}
+
+	.pconvoques{
+		margin: 0
+	}
+
+	.pconvoques, .pconvoques2{
+		font-size: 4vw;
+	}
+}
+
+
+
+//////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+////////////////////        FOOTER        ////////////////////////
+//////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+
+.backfooter{
+	border: none;
+	background-color: $azul;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.divfooter{
+	margin: 0 1vw;
+}	
+
+.titlecontacto{
+	font-family: 'Black';
+	font-size: 274%;
+	text-transform: uppercase;
+	color: white;
+}
+
+.correofooter{
+	font-family: 'Medium';
+	font-size: 4vw;
+	color: white;
+	margin-top: -1.5vw;
+}
+
+.creditos{
+	font-family: 'Regular'; 
+	font-size: 1vw;
+	color: white;
+
+	.linkfooter{
+		color: white;
+
+		&:hover{
+			font-family: 'Bold';
+			text-decoration: none;
+		}
+	}
+
+}
+
+.copyright{
+    font-size: 12px;
+	font-family: 'Italic';
+	color: white;
+}
+
+.iconfooter{
+	position: relative;
+}
+
+.iconosfo{
+	color: white;
+	font-size: 4.5vw;
+}
+
+@media only screen and (max-width: 426px) {
+	.correofooter{
+		font-size: 14vw;
+	}
+
+	.creditos{
+		font-size: 4.5vw;
+	}
+
+	.backtitle{
+		.lineaform{
+			display: none;
+		}
+	}
+
+	.iconfooter{
+		p{
+			display: inline-block;
+			a{
+				.iconosfo{
+					font-size: 12.5vw;
+    				margin-top: 6vw;
+				}
+
+				#faceicon{
+					margin: 0 21vw;
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
+/////////////////////////////////FORMULARIO///////////////////////
+//////////////////////////////////////////////////////////////////
+
+.panel-default, .panel-heading, .panel, .panel-title{
+	border: none;
+	box-shadow: none;
+	background: transparent;
+}
+
+
+#bootstrap-panel, #bootstrap-panel--2, #bootstrap-panel--3, #bootstrap-panel--4{
+	border: none;
+	box-shadow: none;
+	.panel-heading{
+		background: none;
+		border: none;
+	}
+
+	.panel-default{
+		border: none;
+		box-shadow: none;
+	}
+}
+
+.backtitle{
+	margin: 0;
+	background: none;
+	.formtitle{
+		color: $azul;
+		font-family: 'Black';
+		text-transform: uppercase;
+		font-size: 10vw;
+    	padding-right: 24vw;
+    	letter-spacing: 1vw;
+    	line-height: 9vw;
+	}
+
+	.lineaform{
+		background-color: $azul;
+		height: 4vh;
+		position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    margin-bottom: 22px;
+	    margin-right: 15px;
+	}
+}
+
+.form-group {
+	label {
+		color: $azul;
+		font-family: 'Regular';
+		font-weight: inherit;
+	}
+
+	.form-text, .form-control{
+		border: 2px solid $azul;
+		border-radius: 0;
+		box-shadow: none;
+
+	}
+
+	textarea{
+		border: 2px solid $azul;
+		border-radius: 0;
+		box-shadow: none;
+	}
+}
+
+.field-label{
+	color: $azul;
+	font-family: 'Regular';
+	font-size: 2vw;
+}
+
+.table, #field-integrantes-values, #field-albumes-y-canciones-public-values, #field-productores-tecnicos-values, #field-soundcloud-originales-values {
+	thead, tbody{
+		tr{
+			th, td{
+				border: none;
+				padding: 0;
+			}
+
+			&:hover{
+				background: transparent;
+			}
+		}
+	}
+
+		.fondotabla{
+			background-color: transparent;
+			
+			td{
+
+			}
+		}
+	}
+
+.field--name-field-rol-en-la-agrupacion, .field--name-field-nombre-del-integrante, #edit-field-nombre-del-representante-d-wrapper, #edit-field-genero-musical-wrapper, #edit-field-correo-electronico-de-cont-wrapper, #edit-field-anos-de-trayectoria-wrapper, #edit-field-integrantes-0-field-nombre-del-integrante-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-productores-tecnicos-0-field-nombre-del-productor-wrapper, #edit-field-productores-tecnicos-0-field-rol-en-la-agrupacion-wrapper{
+	width: 48.8%;
+    display: inline-block;
+}
+
+#edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper{
+	width: 23.23%;
+    display: inline-block;
+}
+
+#edit-field-albumes-y-canciones-public-0-field-titulo-wrapper, #edit-field-albumes-y-canciones-public-1-field-titulo-wrapper, #edit-field-albumes-y-canciones-public-2-field-titulo-wrapper{
+	width: 65.46%;
+    display: inline-block;
+}
+
+#edit-field-albumes-y-canciones-public-0-field-ano-wrapper, #edit-field-albumes-y-canciones-public-0-field-tipo-wrapper, #edit-field-albumes-y-canciones-public-1-field-ano-wrapper, #edit-field-albumes-y-canciones-public-1-field-tipo-wrapper,#edit-field-albumes-y-canciones-public-2-field-ano-wrapper, #edit-field-albumes-y-canciones-public-2-field-tipo-wrapper{
+	width: 14.92%;
+    display: inline-block;
+    margin-left: 2%;
+}
+
+#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, .field--name-field-rol-en-la-agrupacion, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper, #edit-field-correo-electronico-de-cont-wrapper, #edit-field-anos-de-trayectoria-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-productores-tecnicos-0-field-rol-en-la-agrupacion-wrapper{
+	margin-left: 2%;
+} 
+
+#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, #edit-field-fotografias-2-wrapper{
+	width: 32%;
+	display: inline-block;
+}
+
+#edit-submit{
+	width: 100%;
+	background-color: $naranja;
+	border: none;
+	font-family: 'Black';
+	text-transform: uppercase;
+	font-size: 4vw;
+	letter-spacing: 0.4vw;
+	border-radius: 0;
+	padding: 1.2%;
+	transition: background-color 1s ease-in;
+}
+
+#edit-submit:hover{
+	background-color: lighten($naranja, 10%);
+}
+
+.field-multiple-drag, .tabledrag-toggle-weight{
+	display: none;
+}
+
+.panel-default{
+	.panel-heading{
+		color: $azul;
+		font-family: 'Regular';
+		padding: 0;
+		background-color: transparent;
+
+		a{
+			padding: 0;
+		}
+	}
+}
+
+#edit-field-fotografias--content{
+	padding: 0;
+}
+
+.field, .field--name-body, .field--type-text-with-summary, .field--label-hidden, .field--item{
+	margin-top: 3%;
+
+	img{
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+
+.table-striped{
+	tbody{
+		tr, tr:hover, tr:nth-of-type(odd), tr:nth-of-type(even){
+			background-color: transparent;
+
+			td{
+				border-top: none;
+			}
+		}
+	}
+}
+
+.btn-danger{
+	@include botonesform ($naranja);
+}
+
+.btn-info{
+	@include botonesform ($azul);
+}
+
+.help-block{
+	a{
+		font-family: "Black";
+		font-size: 16px;
+		color: $azul;
+		text-transform: uppercase;
+
+		&:hover, &:active, &:focus{
+			color: $azul;
+			text-decoration: none;
+		}
+	}
+}
+
+.popover{
+	border: 2px solid $azul;
+	box-shadow: none;
+	padding: 0;
+	.popover-title{
+		color: white;
+		font-family: 'Bold2';
+		text-transform: uppercase;
+		background-color: $azul;
+		text-align: center;
+	}
+
+	.arrow{
+		&:after{
+			border-bottom-color: $azul !important;
+		}
+	}
+
+	.popover-content{
+		ul{
+			color: $azul;
+			font-family: 'Regular';
+
+			code{
+				color: $naranja;
+				background-color: #ff640042;
+				font-family: 'Bold';
+				letter-spacing: 0.5px;
+			}
+		}
+	}
+}
+
+
+button[data-drupal-selector="edit-field-fotografias-2-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-3-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-0-remove-button"]{
+	width: 39%;
+}
+
+input[data-original-title="Esto debe ser una URL externa como <em class='placeholder'>http://example.com</em>."]{
+	display: none;
+
+}
+
+#edit-terms-of-use{
+
+	.formtitle{
+		letter-spacing: 0;
+		font-size: 4vw;
+		padding-right: 0;
+		line-height: 4vw;
+	}
+	
+	#bodydeterminos{
+		width: 100%; 
+		height: 13vw; 
+		overflow: scroll; 
+		color: $azul; 
+		font-family: 'Regular';
+	}
+}
+
+#correoterminos{
+	text-decoration: none;
+	color: $naranja;
+
+	&:hover{
+		color: darken($naranja, 10%);
+		text-decoration: none;
+	}
+}
+
+fieldset[data-drupal-selector="edit-field-genero-gender"],  fieldset[data-drupal-selector="edit-field-objetivos-de-venir-a-la-fi"]{
+	legend{
+		color: $azul;
+		font-family: 'Regular';
+		font-weight: 100;
+	}
+}
+
+.views-field-edit-user{
+
+	margin-bottom: 1.5vw;
+	a{
+		text-decoration: none;
+    	color: $azul;
+    	font-family: 'Bold';
+    	font-size: 1.5vw;
+    	padding: 8px;
+
+    	&:hover{
+    		background-color: blue;
+    		color: white;
+    	}
+	}
+}
+
+.well{
+	background-color: $azul;
+	box-shadow: none;
+	border: none;
+	border-radius: 0px;
+
+	.view-header{
+		h4{
+			color: white;
+			font-family: 'Bold';
+		}
+	}
+
+	.view-content{
+		.item-list{
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				li{
+					.views-field-title{
+
+						width: 80%;
+						display: inline-block;
+
+						a, span{
+							text-decoration: none;
+							color: white;
+							font-family: 'Regular';
+							text-transform: capitalize;
+
+							/*&:hover{
+								color: $naranja;
+								text-decoration: none;
+							}*/
+						}
+					}
+
+					.views-field-edit-node{
+						width: 20%;
+						display: inline-block;
+
+						a{
+							padding: 5px;
+							background: $naranja;
+							font-family: 'Regular';
+							color: white;
+
+							&:hover{
+								background: white;
+								color: $naranja;
+								font-family: 'Bold';
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#group-datos-contenido--description{
+	color: $naranja;
+	font-family: 'Medium';
+	text-decoration: underline;
+}
+
+.js-form-type-vertical-tabs{
+	display: none !important;
+}
+
+.file--mime-application-pdf, .file--mime-image-jpeg{
+	border: 0.2vw solid $azul;
+
+	.file-icon{
+		.text-primary{
+			color: $azul;
+		}
+	}
+
+	.file-link, .file-size{
+		color: $azul;
+		font-family: 'Regular';
+		a{
+			font-size: 120%;
+		}
+	}
+}
+
+#editar-aplicacion{
+	.panel-heading{
+		display: none;
+	}
+
+	.panel-body{
+		#editar-aplicacion--description{
+			font-family: 'Bold';
+			color: $azul;
+			font-size: 1.5vw;
+		}
+	}
+
+	.field--name-field-editar-aplicacion{
+		display: none;
+	}
+}
+
+////////////////
+////////////////
+////////////////
+////////////////
+////////////RESPONSIVE
+////////////////
+////////////////
+////////////////
+////////////////
+
+
+@media only screen and (max-width: 1999px) {
+
+	.field--name-field-rol-en-la-agrupacion, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper, #edit-field-correo-electronico-de-cont-wrapper, #edit-field-anos-de-trayectoria-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-productores-tecnicos-0-field-rol-en-la-agrupacion-wrapper, #edit-field-correo-electronico-de-cont-wrapper{
+		margin-left: 1.8%;
+	}
+
+	#edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper {
+	    width: 23.3%;
+	}
+
+	#edit-field-albumes-y-canciones-public-1-field-ano-wrapper, #edit-field-albumes-y-canciones-public-0-field-ano-wrapper, #edit-field-albumes-y-canciones-public-0-field-tipo-wrapper, #edit-field-albumes-y-canciones-public-1-field-tipo-wrapper, #edit-field-albumes-y-canciones-public-2-field-ano-wrapper, #edit-field-albumes-y-canciones-public-2-field-tipo-wrapper{
+		margin-left: 1.7%;
+	}
+
+	#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, #edit-field-fotografias-2-wrapper{
+		width: 31.7%;
+		display: inline-block;
+	}
+
+	button[data-drupal-selector="edit-field-fotografias-2-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-3-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-0-remove-button"]{
+		width: 39%;
+	}
+
+	.field--name-field-codigo-de-area{
+		width: 12%;
+		display: inline-block;
+	}
+
+	.field--name-field-telefono-de-contacto{
+		width: 85.6%;
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+
+
+	#edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper {
+	    width: 23%;
+	}
+
+		#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, #edit-field-fotografias-2-wrapper{
+		width: 31.6%;
+	}
+
+	button[data-drupal-selector="edit-field-fotografias-2-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-3-0-remove-button"], button[data-drupal-selector="edit-field-fotografias-0-remove-button"]{
+		width: 39%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+	.btn-info{
+		width: 18%;
+	}
+
+	#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, #edit-field-fotografias-2-wrapper{
+		width: 100%;
+		margin-left: 0;
+	}
+
+}
+
+@media only screen and (max-width: 426px) {
+	
+	
+	#edit-field-albumes-y-canciones-public-0-field-titulo-wrapper, #edit-field-albumes-y-canciones-public-1-field-titulo-wrapper, #edit-field-albumes-y-canciones-public-2-field-titulo-wrapper, #edit-field-albumes-y-canciones-public-0-field-ano-wrapper, #edit-field-albumes-y-canciones-public-0-field-tipo-wrapper, #edit-field-albumes-y-canciones-public-1-field-ano-wrapper, #edit-field-albumes-y-canciones-public-1-field-tipo-wrapper,#edit-field-albumes-y-canciones-public-2-field-ano-wrapper, #edit-field-albumes-y-canciones-public-2-field-tipo-wrapper, .field--name-field-nombre-del-integrante, .field--name-field-rol-en-la-agrupacion, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper, #edit-field-correo-electronico-de-cont-wrapper, #edit-field-anos-de-trayectoria-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-productores-tecnicos-0-field-rol-en-la-agrupacion-wrapper, #edit-field-albumes-y-canciones-public-0-field-ano-wrapper, #edit-field-albumes-y-canciones-public-0-field-tipo-wrapper, #edit-field-albumes-y-canciones-public-0-field-titulo-wrapper, #edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper, #edit-field-pais-de-origen-wrapper, #edit-field-ciudad-origen-wrapper, #edit-field-pais-residencia-wrapper, #edit-field-ciudad-residencia-wrapper, #edit-field-nombre-del-representante-d-wrapper, #edit-field-genero-musical-wrapper, #edit-field-correo-electronico-de-cont-wrapper, #edit-field-anos-de-trayectoria-wrapper, #edit-field-integrantes-0-field-nombre-del-integrante-wrapper, #edit-field-integrantes-0-field-rol-en-la-agrupacion-wrapper, #edit-field-productores-tecnicos-0-field-nombre-del-productor-wrapper, #edit-field-productores-tecnicos-0-field-rol-en-la-agrupacion-wrapper{
+		width: 100%;
+		margin-left: 0;
+		display: block;
+	}
+
+	.lineaform{
+		display: none;
+	}
+
+	.field-label{
+		font-size: 5.5vw;
+	}
+
+	#edit-submit{
+		padding: 2.2%;
+		font-size: 7vw;
+	}
+
+	.btn-danger, .btn-info{
+		width: 100%;
+	}
+
+	#edit-field-fotografias-wrapper, #edit-field-fotografias-3-wrapper, #edit-field-fotografias-2-wrapper{
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                 //REGISTRO
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.botonregistro{
+	width: 100%;
+	background-color: transparent;
+	border: 3px $naranja solid;
+	font-family: 'Black';
+	text-transform: uppercase;
+	font-size: 4vw;
+	letter-spacing: 0.4vw;
+	border-radius: 0;
+	padding: 1.2%;
+	transition: all 0 ease-in;
+	color: $naranja;
+
+	&:hover{
+		color: white;
+		text-decoration: none;
+		background-color: $naranja;
+	}
+
+	&:focus{
+		border: none;
+	}
+}
+
+.registrop{
+	@include parrafoazul (0 0 4vh 0, 2.5vw);
+	text-transform: uppercase;
+
+	a{
+		color: $naranja;
+
+		&:hover{
+			text-decoration: none;
+			color: darken($naranja, 10%);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                 //PAGINA DE USUARIO
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.field--name-user-picture{
+	width: 25%;
+	display: inline-block;
+}
+
+.titulosusuario{
+	color: $naranja;
+	font-family: 'Bold';
+	text-transform: uppercase;
+	font-size: 1vw;
+	margin: 0 2vw 0 0;
+    display: inline;
+}
+
+.field--item{
+	color: $azul;
+	font-family: 'Bold';
+	font-size: 2vw;
+    margin: 0;
+    display: inline;
+}
+
+.form-no-label, .field--label-above{
+	width: 100%;
+	display: inline-block;
+	margin-top: 2%;
+
+	.field--item{
+		a{
+			color: $azul;
+			font-family: 'Regular';
+			font-size: 1.3vw;
+
+			&:hover{
+				color: darken($azul, 10%);
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.form-no-label{
+	color: $naranja;
+	font-family: 'Regular';
+
+	h4{
+		font-family: 'Bold';
+		color: $azul;
+	}
+}
+
+.field--name-field-nombre-del-representante-d{
+	.field--item{
+		font-family: 'Bold2';
+		font-size: 2vw;
+	}
+
+	.titulosusuario{
+		display: block;
+		margin-top: 3vw;
+
+	}
+}
+
+.field--name-field-pais-residencia, .field--name-field-ciudad-residencia, .field--name-field-telefono-de-contacto, .field--name-field-correo-electronico-de-cont, .field--name-field-pais-de-origen, .field--name-field-ciudad-origen{
+	width: 45%;
+
+	.field--item{
+		font-family: 'Bold2';
+		font-size: 2vw;
+	}
+
+	.titulosusuario{
+		display: block;
+	}
+}
+
+.field--name-field-resena-de-la-agrupac{
+	margin-top: 5%;
+
+	.titulosusuario{
+		display: block;
+	}
+
+	.field--item{
+		font-size: 1vw;
+		font-family: 'Regular';
+	}
+}
+
+.field--name-field-nombre-del-integrante{
+	width: 30%;
+	.titulosusuario{
+		display: none;
+	}
+
+	.field--item{
+		text-transform: uppercase;
+		font-family: 'Black';
+		font-size: 2vw;
+	}
+}
+
+.field--name-field-rol-en-la-agrupacion{
+	width: 30%;
+	.titulosusuario{
+		display: none;
+	}
+
+	.field--item{
+
+	}
+}
+
+.field--name-field-anos-de-trayectoria, .field--name-field-genero-musical{
+	width: 48%;
+
+	.field--item{
+		text-transform: uppercase;
+		font-family: 'Black';
+		font-size: 1.5vw;
+	}
+}
+
+.field--name-field-ano, .field--name-field-tipo{
+	width: 14%;
+	.titulosusuario{
+		display: none;
+	}
+}
+
+.field--name-field-titulo{
+	width: 70%;
+	.titulosusuario{
+		display: none;
+	}
+
+	.field--item{
+		font-size: 2vw;
+		font-family: 'Bold';
+		text-transform: uppercase;
+	}
+}
+
+.field--name-field-nombre-del-productor{
+	width: 40%;
+	.titulosusuario{
+		display: none;
+	}
+
+	.field--item{
+		font-size: 2vw;
+		font-family: 'Bold';
+		text-transform: uppercase;
+	}
+}
+
+.page-header{
+	border: none;
+	color: $azul;
+	font-family: 'Black';
+	font-size: 5vw;
+	text-transform: uppercase;
+}
+
+
+.alinear{
+	.usuariossidebar{
+		.divusuarios{
+			margin-left: 60px;
+		}
+		span{ 
+			display: none;
+		}
+
+		img{
+			vertical-align: top;
+			float: left;
+		}
+
+		h4{
+			display: inline;
+			font-size: 16px;
+			font-family: 'Bold';
+			color: $azul;
+
+			a{
+				font-family: 'Bold';
+				color: $azul;
+				text-transform: initial;
+				padding: 0;
+			}
+
+		}
+
+		.ocupacionsidebar{
+			display: inline;
+			font-family: 'Regular';
+			color: $azul;
+			font-size: 14px;
+		}
+	}
+}
+
+.view-footer{
+	text-align: center;
+	a{
+		color: $azul;
+		font-family: 'Regular';
+		text-decoration: underline;
+
+		&:hover{
+			color: darken($azul, 10%);
+		}
+	}
+}
+
+.well{
+	background: white;
+	border: 4px solid $azul;
+}
+
+#edit-submit-usuarios{
+	display: none;
+}
+
+#edit-field-apellido-last-name-value{
+	width: 97%;
+}
+
+
+.path-usuario-miim{
+	background-image: url(/sites/default/files/background_profile.svg);
+	background-repeat: no-repeat;
+	background-position-y: 56px;
+}
+
+.views-field-nothing{
+	width: 100%;
+	.field-content{
+		p{
+			color: $azul;
+			font-family: 'Regular';
+			margin-bottom: 25px;
+		}
+
+		#redesprofile{
+			display: inline;
+			margin-right: 7%;
+
+			a{
+				color: $azul;
+				font-size: 20px;
+				padding: 10px;
+			}
+		}
+
+		.btn-primary{
+			border: none;
+			border-radius: 0;
+			background-color: $azul;
+			font-family: 'Bold';
+			text-transform: uppercase;
+			color: white;
+			width: 23%;
+		}
+	}
+}
+
+.field--type-link{
+	.titulosusuario{
+		font-size: 2vw;
+	}
+
+	.field--item{
+		a{
+			font-size: 2vw;
+		}
+	}
+}
+
+#block-views-block-usuarios-block-1{
+	background-color: white;
+	padding: 10px;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                 //PAGINA DE REGISTRO DE USUARIO
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.control-label {
+	color: $azul;
+	font-family: 'Bold';
+}
+
+#edit-contact--2--description, .user-pass-reset, #edit-mail--description, #edit-preferred-langcode--description, #edit-preferred-langcode, #edit-current-pass--description{
+	color: $azul;
+	font-family: 'Regular';
+}
+
+.password-strength__meter{
+	background-color: darken($azul, 20%);
+
+	.password-strength__indicator{
+		background-color: lighten($azul, 10%);
+	}
+}
+
+
+
+
+
+
+///////////////////////////////HOME///////////////////////////////
+.divsedes{
+	position: relative;
+	width: 100%;
+
+	img{
+		width: 100%;
+		height: 326px;
+	}
+
+	.lassedes{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+
+		#sedeideal{
+			width: 12%;
+		}
+
+		#sedecac{
+			width: 34%;
+		}
+
+		#sedeideal{
+			width: 14%;
+		}
+
+		.cadasede{
+		width: 33%;
+		text-align: center;
+		display: inline-block;
+
+		}
+	}
+}
+
+.sedeanchor{
+	text-align: center;
+	font-size: 2vw;
+	font-family: "Bold";
+	color: white;
+	text-transform: uppercase;
+	background-color: $naranja;
+	padding: 10px 3%;
+
+	&:hover, &:focus{
+		text-decoration: none;
+		color: white;
+		background-color: lighten($naranja, 10%);
+	}
+}
+
+.views-field-field-imagenpanel{
+	border: 6px solid $azul;
+}
+
+.divpanelistas{
+	p{
+		font-family: "Regular";
+		font-size: 13px;
+		padding: 10px 30px;
+		background-color: $azul;
+
+		a{
+			color: white;
+
+			&:hover{
+				text-decoration: none;
+				color: white;
+			}
+		}
+
+	}
+}
+
+.titulopanelista{
+	font-family: 'Bold';
+	color: $azul;
+}
+
+.view-id-panelistas_2{
+	#views-bootstrap-panelistas-2-block-1{
+		.views-field-nothing{
+			border: none;
+			.panelista-contenedor{
+				position: relative;
+
+				.panelista-resumen{
+					position: absolute;
+					top: 62%;
+
+					.titulopanelista{
+						text-align: center;
+						color: white;
+						font-family: 'Bold';
+						padding: 10px;
+						background-color: $azul;
+						text-transform: uppercase;
+						margin: 10px;
+						font-size: 30px;
+					}
+
+					.previewpanelista{
+						background-color: $azul;
+						color: white;
+						font-family: 'Regular';
+						padding: 8px 12px;
+						margin: 10px;
+					}
+				}
+
+				.panelista-completo{
+					display: none;
+					position: absolute;
+					top: 0;
+
+					.titulopanelista{
+						text-align: center;
+						color: white;
+						font-family: 'Bold';
+						padding: 10px;
+						background-color: $azul;
+						text-transform: uppercase;
+						margin: 10px;
+						font-size: 30px;
+					}
+
+					.bioredes{
+						background-color: $azul;
+						margin: 10px;
+
+						p{
+							color: white;
+							font-family: 'Regular';
+							padding: 8px 12px;
+						}
+
+						.redespanelistas{
+							text-align: center;
+							padding-bottom: 17px;
+
+							a{
+								background-color: white;
+								color: $azul;
+								font-size: 15px;
+								border-radius: 100%;
+								padding: 5px;
+								margin: 13px;
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.field--name-body{
+	.textoprincipal{
+		font-family: 'Regular';
+		font-size: 1.8vw;
+		margin-top: 24px;
+		text-align: justify;
+		padding-left: 30px;
+
+		span{
+			font-family: 'Bold';
+		}
+	}
+
+	#homehighlight{
+		padding: 0 30px 0 0;
+
+		.titlehome{
+			font-family: 'Black';
+			font-size: 4.7vw;
+			margin-top: 12vw;
+		}
+
+		img{
+			position: relative;
+			left: -19vw;
+			width: 56vw;;
+    		margin-top: 30px;
+		}
+	}
+}
+
+.actividadesgeneral{
+	padding: 7px 0;
+	cursor: pointer;
+
+	&:hover{
+		.actividades-evento, .actividades-sede, .actividades-fecha, .actividades-circulo{
+			color: $naranja;
+		}
+
+		#circulogrid{
+			span{
+				&::before{
+					background-color: $naranja;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.actividad-col-izquierda{
+	padding: 0;
+	width: 10%;
+    text-align: left;
+}
+
+.actividades-circulo {
+	color: blue;
+	font-size: 0.5em;
+}
+
+.actividades-titulo {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.actividades-fecha, .actividades-evento {
+	color: $azul;
+	text-transform: uppercase;
+	font-family: 'Bold';
+	font-size: 20px;
+}
+
+.actividades-fecha{
+	cursor: pointer;
+
+	&:hover{
+		color: $naranja;
+	}
+}
+
+.actividades-sede{
+	color: $azul;
+	font-family: 'Regular';
+	font-size: 20px;
+
+}
+
+.actividad-contenedor {
+}
+
+.actividad-col-derecha {
+	border-style: solid;
+	border-width: 5px;
+	border-color: blue;
+	padding: 40px;
+	right: 10px;
+	top: 10px;
+	display: none;
+	position: absolute;
+	z-index: 999;
+}
+
+
+#navbar-collapse\ azulmenu a {
+  color: #ffffff;
+}
+
+#navbar-collapse\ azulmenu {
+  background-color: $azul;
+}
+
+.informacion-boton {
+    top: 53px;
+    position: absolute;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    font-size: 51px;
+    font-family: 'Black';
+    left: -8vw;
+}
+
+#circulogrid{
+	padding: 0;
+	width: 0;
+
+	span{
+		&::before{
+			content: '';
+			position: absolute;
+			top: 59%;
+			right: -5px;
+			width: 0px;
+			height: 209%;
+			border: 1px solid #0000ff;
+			background-color: $azul;
+		}
+	}
+
+	.circle-231{
+		&::before{
+			display: none;
+		}
+	}
+}
+
+
+#botonplus{
+	&:hover{
+		color: white;
+		text-decoration: none;
+	}
+
+	.plusicon{
+		color: $naranja;
+		font-size: 34px;
+		float: right;
+		transition: all 0.3s ease-out;
+
+		&:hover{
+			color: lighten($naranja, 10%);
+			transform: rotate(360deg);
+			cursor: pointer;
+		}
+	}
+}
+
+.view-showcase-slider{
+	.view-content{
+		#views-bootstrap-showcase-slider-block-1{
+			h3{
+				display: none;
+			}
+		}
+	}
+}
+
+.navbar-btn{
+	img{
+		width: 47px;
+		margin-left: 20px;
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////PANEL DERECHA PROGRAMA
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+.tipo-evento, .fecha-evento{
+	font-family: 'Medium';
+	text-transform: uppercase;
+	color: $azul;
+	font-size: 20px;
+}
+
+.fecha-evento{
+	float: right;
+}
+
+.titulo-evento{
+	margin-bottom: 10px;
+	color: $azul;
+	font-family: 'Black';
+	text-transform: uppercase;
+}
+
+.sede-evento{
+	font-family: 'Bold';
+    font-size: 20px;
+    display: block;
+    
+    a{
+    	color: $azul;
+
+    	&:hover{
+    		color: $azul;
+    		text-decoration: none;
+    	}
+    }
+}
+
+.inscribete-evento, .ver-evento{
+	margin-top: 30px;
+	display: inline-block;
+
+	div{
+		display: inline;
+		background-color: $azul;
+		padding: 10px 20px;
+		font-size: 20px;
+		
+		&:hover{
+			background-color: darken($azul, 20%);
+		}
+
+		a{
+			color: white;
+			font-family: 'Regular';
+			text-transform: uppercase;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.ver-evento{
+	margin-top: 27px;
+	float: right;
+	background-color: $azul;
+	padding: 8px 20px;
+	display: none;
+
+	&:hover{
+		background-color: darken($azul, 20%);
+	}
+
+	a{
+		font-size: 20px;
+		text-transform: uppercase;
+		color: white;
+		font-family: 'Regular';
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+#actividad-completo-195{
+	top: 248.5px;
+}
+
+#actividad-completo-196{
+	top: calc(228.5px - 50%);
+}
+
+#actividad-completo-197{
+	top: calc(228.5px - (50%*3));
+}
+
+#actividad-completo-198{
+	top: calc(248.5px-120);
+}
+
+#actividad-completo-203{
+	top: calc(228.5px - (50%*6));
+}
+
+#actividad-completo-204{
+	top: calc(228.5px - (50%*8));
+}
+
+#actividad-completo-205{
+	top: calc(228.5px - (50%*10));
+}
+
+#actividad-completo-206{
+	top: calc(228.5px - (50%*12));
+}
+
+#actividad-completo-207{
+	top: calc(228.5px - (50%*14));
+}
+
+#actividad-completo-208{
+	top: calc(228.5px - (50%*16));
+}
+
+#actividad-completo-209{
+	top: calc(228.5px - (50%*18));
+}
+
+#actividad-completo-210{
+	top: calc(228.5px - (50%*20));
+}
+
+#actividad-completo-215{
+	top: calc(228.5px - (50%*22));
+}
+
+#actividad-completo-218{
+	top: calc(228.5px - (50%*24));
+}
+
+#actividad-completo-219{
+	top: calc(228.5px - (50%*26));
+}
+
+#actividad-completo-224{
+	top: calc(228.5px - (50%*28));
+}
+
+#actividad-completo-225{
+	top: calc(228.5px - (50%*30));
+}
+
+#actividad-completo-226{
+	top: calc(228.5px - (50%*32));
+}
+
+#actividad-completo-227{
+	top: calc(228.5px - (50%*34));
+}
+
+#actividad-completo-228{
+	top: calc(228.5px - (50%*36));
+}
+
+#actividad-completo-231{
+	top: calc(228.5px - (50%*38));
+}
+
+#programa{
+	
+	right: 0;
+	z-index: 999;
+
+	div{
+		text-align: right;
+	    position: relative;
+	    right: 17px;
+	    top: -58px;
+
+		.descargarpdf{
+			font-family: 'Bold';
+			color: #ff6400;
+			text-transform: uppercase;
+			padding: 9px 10px 0 0;
+			display: inline;
+			margin-top: 10px;
+			vertical-align: -webkit-baseline-middle;
+		}
+	}
+}
+
+.datossede{
+	font-size: 20px;
+	font-family: 'Regular';
+	margin-bottom: 30px;
+}
+
+.websedes{
+	font-size: 20px;
+	font-family: 'Regular';
+	margin-bottom: 30px;
+	color: $azul;
+
+	&:hover{
+		color: $azul;
+		text-decoration: none;
+	}
+}
+
+.boldactividades{
+	span{
+		font-family: 'Bold';
+	}
+}
+
+#organizarow{
+	margin-left: 40px;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+.block-views-blockactividades-block-1{
+	margin-top: 30px;
+}
+
+.alert-info{
+	background-color: transparent;
+	border: none;
+	color: $azul;
+
+	.view-tickets{
+		.tickets{
+			.btn-warning{
+				border: none;
+				background-color: $azul;
+				color: white;
+			}
+		}
+
+	}
+}
+
+.view-tickets{
+	.tickets{
+		p{
+			font-size: 20px;
+			.btn-warning{
+				border: none;
+				background-color: $azul;
+				color: white;
+				border-radius: 0;
+				margin-left: 10px;
+
+				&:hover{
+					background-color: darken($azul, 15%);
+				}
+			}
+		}
+	}
+}
+
+#actividad-205, #actividad-218{
+	margin-top: 20px;
+}
+
+#actividad-204, #actividad-215{
+	#circulogrid{
+		.actividades-circulo{
+			&::before{
+				display: none;
+			}
+		}
+	}
+}
+
+.views-field-nothing{
+	h3{
+		a{
+			font-family: 'Bold';
+			color: $azul;
+
+			&:hover{
+				color: $azul;
+			}
+		}
+
+	}
+}
+
+
+.tabs--primary{
+	border: none;
+
+	.active{ 
+		.is-active{
+			background-color: $azul;
+			color: white;
+			border-radius: 0;
+		}
+	}
+
+	li{
+		border-bottom: 2px solid $azul;
+
+		a{
+			color: $azul;
+			font-family: 'Regular';
+			text-transform: uppercase;
+
+			&:hover{
+				background-color: $azul;
+				color: white;
+			}
+		}
+	}
+}
+
+
+.nav{
+	li{
+		.menu-inscribete{
+			padding: 21px !important;
+			margin-top: 1px;
+			background-color: $naranja;
+
+			&:hover{
+				background-color: lighten($naranja, 10%);
+			}
+		}
+	}
+}
+
+
+#cambiarcontra{
+	width: 100%;
+	background-color: $naranja;
+	border: none;
+	font-family: 'Black';
+	text-transform: uppercase;
+	font-size: 2vw;
+	letter-spacing: 0.4vw;
+	border-radius: 0;
+	padding: 1.2%;
+	color: white;
+
+	&:hover{
+		background-color: lighten($naranja, 10%);
+		text-decoration: none;
+	}
+
+}
+
+
+
+
+
+#edit-submit{
+	width: 100%;
+	background-color: $naranja;
+	border: none;
+	font-family: 'Black';
+	text-transform: uppercase;
+	font-size: 4vw;
+	letter-spacing: 0.4vw;
+	border-radius: 0;
+	padding: 1.2%;
+	transition: background-color 1s ease-in;
+}
+
+#edit-submit:hover{
+	background-color: lighten($naranja, 10%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 420px) {
+
+	/**{
+		border: 1px solid red;
+	}
+
+	body{
+		overflow-x: hidden;
+	}*/
+
+
+	.navbar-header{
+		background-color: $azul;
+
+		span{
+			background-color: white;
+		}
+	}
+
+	.titulosbloques .block-title {
+		font-size: 18vw;
+	}
+
+	#programa{
+		div{
+			left: 0;
+			top: 0;
+		}
+	}
+
+	.field--name-body {
+		.textoprincipal{
+			padding: 0;
+			font-size: 6.8vw;
+		}
+	}
+
+	.field--name-body{ 
+		#homehighlight{
+			padding: 0;
+			img{
+				position: relative;
+				left: -4vw;
+				width: 92vw;
+				margin-top: 30px;
+			}
+
+			.informacion-boton{
+				left: -17px;
+				top: 50%;
+				font-size: 10vw;
+				position: absolute;
+			}
+
+		}
+	}
+
+	.actividad-col-izquierda{
+		width: 100%;
+	}
+
+	#circulogrid{
+		display: none;
+	}
+
+	.creditos{
+		font-size: 7.5vw !important;
+	}
+
+	/*.path-frontpage{
+		width: 110%;
+	}*/
+
+	.lassedes{
+		.row{
+			div{
+				margin-bottom: 30px;
+
+				.sedeanchor{
+					font-size: 6vw;
+				}
+			}
+		}
+	}
+
+	.divsedes{
+		width: 100%;
+		background-image: url(https://miim.ec/sites/default/files/FondoSEDES-01.png);
+		background-size: cover;
+
+		.lassedes{
+			position: relative;
+			transform: translateY(10%);
+		}
+
+		img{
+			width: 277%;
+			height: auto;
+			left: -50%;
+			position: relative;
+			display: none;
+		}
+	}
+
+	.actividad-col-derecha{
+		position: relative;
+	}
+
+	#actividad-completo-195{
+		top: 0;
+	}
+
+	#organizacol, #organizarow{
+		padding-right: 0;
+		margin-right: 0;
+	}
+
+	#organizarow{
+		margin-left: 10px;
+	}
+	
+	#programa{
+		padding-right: 13px;
+	}
+
+	.navbar{
+		.logo{
+			margin-right: 0;
+			padding-left: 0;
+		}
+	}
+
+}
+
+.nav{
+	li{
+		.menu-inscribete{
+			padding: 16px 25px !important;
+			margin-left: -11px;
+		}
+	}
+} 
+.navbar-fixed-top{
+	.navbar-collapse{
+		max-height: 384px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////PANELISTAS
+
+
+
+
+.path-panelistas{
+	.panelista-resumen{
+		display: none;
+	}
+}
+
+
+
+
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////AGENDA
+///////////////////////////////////////////
+
+.table {
+  width: 30%;
+}
+
+.sm-rojo {
+  background-color:red;
+  text-decoration: line-through;
+  color: #fff;
+  text-align: center;
+}
+
+.sm-verde {
+  background-color:#00ff00;
+  text-align: center;
+}
+
+
+.panelista-contenedor{
+	.panelista-resumen{
+		.sedeanchor{
+			font-size: 1.3vw;
+			padding: 10px calc(2em - 18px);
+		}
+	}
+}
+
+
+
+.view-id-mi_horario{
+	.view-header{
+		margin-top: 40px;
+
+		a{
+			font-family: 'Regular';
+			text-transform: uppercase;
+			background-color: $azul;
+			color: white;
+			padding: 10px 15px;
+
+			&:hover{
+				text-decoration: none;
+				background-color: darken($azul, 10%);
+			}
+
+		}
+
+		h3{
+			font-family: 'Bold';
+			text-transform: uppercase;
+			color: $azul;
+			font-size: 2.5vw;
+		}
+	}
+}
+
+.view-id-speedmeetings{
+	.view-content{
+		#view-nothing-table-column{
+			font-family: 'Medium';
+			color: $azul;
+			text-align: center;
+			padding: 15px;
+			font-size: 1.5vw;
+		}
+	}
+}
+
+.speedpanelista{
+	margin-top: 30px;
+}
+
+.view-id-panelista_perfil{
+	div{
+		color: $azul;
+		font-family: 'Bold';
+		h1{
+			color: $azul;
+			font-family: 'Medium';
+		}
+	}
+}
